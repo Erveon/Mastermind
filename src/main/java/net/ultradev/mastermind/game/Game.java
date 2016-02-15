@@ -26,13 +26,16 @@ public class Game {
 	}
 	
 	public void guess(Combination combination) {
-		if(combination.getColors().length != secret.getColors().length)
+		if(combination.getColors().length != secret.getColors().length) {
 			return;
+		}
 		if(getSecret().equals(combination)) {
 			win();
 		} else {
-			if(++tries == maxTries)
+			tries++;
+			if(tries == maxTries) {
 				lose();
+			}
 		}
 	}
 	
